@@ -1,9 +1,10 @@
 <footer>
 	<div class="footer-inner">
-		<p class="copyright">&copy; {new Date().getFullYear()} RephlexZero. All rights reserved.</p>
+		<p class="copyright">&copy; {new Date().getFullYear()} Jake Stewart</p>
 		<div class="links">
-			<a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-			<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+			<a href="https://github.com/RephlexZero" target="_blank" rel="noopener noreferrer">GitHub</a>
+			<a href="https://www.linkedin.com/in/jake-stewart-360444272/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+			<a href="mailto:jake.reflex@gmail.com">Email</a>
 		</div>
 	</div>
 </footer>
@@ -42,6 +43,6 @@
 	}
 
 	.links a:hover {
-		color: var(--color-accent);
+		color: var(--color-cyan);
 	}
 </style>

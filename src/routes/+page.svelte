@@ -3,24 +3,35 @@
 </script>
 
 <svelte:head>
-	<title>RephlexZero — Developer Portfolio</title>
-	<meta name="description" content="Personal portfolio showcasing projects, skills, and experience." />
+	<title>Jake Stewart — Embedded Engineer</title>
+	<meta name="description" content="Embedded systems engineer specialising in Rust, C, Linux, and hardware design." />
 </svelte:head>
 
 <section class="hero">
+	<div class="hero-bg" aria-hidden="true">
+		<div class="orb orb-1"></div>
+		<div class="orb orb-2"></div>
+		<div class="orb orb-3"></div>
+		<div class="grid-overlay"></div>
+	</div>
+
 	<div class="hero-content">
-		<p class="greeting">Hi, I'm</p>
-		<h1>RephlexZero</h1>
+		<p class="greeting">Hey, I'm</p>
+		<h1 class="gradient-text">Jake Stewart</h1>
 		<p class="tagline">
-			I build things for the web — crafting <span class="highlight">fast</span>,
-			<span class="highlight">accessible</span>, and <span class="highlight">beautiful</span> digital experiences.
+			Embedded engineer building things at the intersection of
+			<span class="chip chip-rust">Rust</span>
+			<span class="chip chip-c">C</span>
+			<span class="chip chip-hw">Hardware</span>
+			and
+			<span class="chip chip-linux">Linux</span>
 		</p>
+		<p class="sub">EEE student. I design circuits, write firmware, and occasionally make software that talks to the real world.</p>
 		<div class="cta-group">
-			<a href="{base}/projects" class="btn btn-primary">View Projects</a>
-			<a href="{base}/contact" class="btn btn-outline">Get In Touch</a>
+			<a href="{base}/projects" class="btn btn-primary">See My Work</a>
+			<a href="{base}/contact" class="btn btn-outline">Say Hello</a>
 		</div>
 	</div>
-	<div class="hero-glow" aria-hidden="true"></div>
 </section>
 
 <style>
@@ -34,38 +45,122 @@
 		overflow: hidden;
 	}
 
+	.hero-bg {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+	}
+
+	.grid-overlay {
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+		background-size: 60px 60px;
+		mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 100%);
+	}
+
+	.orb {
+		position: absolute;
+		border-radius: 50%;
+		filter: blur(100px);
+		animation: float 12s ease-in-out infinite;
+	}
+
+	.orb-1 {
+		width: 500px; height: 500px;
+		background: radial-gradient(circle, rgba(99, 102, 241, 0.3), transparent 70%);
+		top: 10%; left: 15%;
+	}
+
+	.orb-2 {
+		width: 400px; height: 400px;
+		background: radial-gradient(circle, rgba(34, 211, 238, 0.2), transparent 70%);
+		top: 40%; right: 10%;
+		animation-delay: -4s;
+	}
+
+	.orb-3 {
+		width: 350px; height: 350px;
+		background: radial-gradient(circle, rgba(251, 113, 133, 0.15), transparent 70%);
+		bottom: 10%; left: 40%;
+		animation-delay: -8s;
+	}
+
+	@keyframes float {
+		0%, 100% { transform: translate(0, 0) scale(1); }
+		33% { transform: translate(30px, -20px) scale(1.05); }
+		66% { transform: translate(-20px, 15px) scale(0.95); }
+	}
+
 	.hero-content {
 		max-width: var(--max-width);
 		position: relative;
 		z-index: 1;
+		animation: fade-up 0.8s ease both;
 	}
 
 	.greeting {
 		font-family: var(--font-mono);
-		color: var(--color-accent);
+		color: var(--color-cyan);
 		font-size: 1rem;
 		margin-bottom: var(--space-sm);
 	}
 
 	h1 {
-		font-size: clamp(2.5rem, 8vw, 5rem);
+		font-size: clamp(3rem, 10vw, 6rem);
 		font-weight: 700;
-		letter-spacing: -0.03em;
-		line-height: 1.1;
-		margin-bottom: var(--space-md);
+		letter-spacing: -0.04em;
+		line-height: 1.05;
+		margin-bottom: var(--space-lg);
 	}
 
 	.tagline {
-		font-size: clamp(1rem, 2.5vw, 1.25rem);
+		font-size: clamp(1rem, 2.5vw, 1.2rem);
 		color: var(--color-text-muted);
-		max-width: 600px;
+		max-width: 640px;
+		line-height: 2;
+		margin-bottom: var(--space-sm);
+	}
+
+	.sub {
+		font-size: 1rem;
+		color: var(--color-text-muted);
+		max-width: 540px;
 		line-height: 1.7;
 		margin-bottom: var(--space-xl);
 	}
 
-	.highlight {
-		color: var(--color-text);
+	.chip {
+		display: inline-block;
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
 		font-weight: 600;
+		padding: 0.15rem 0.6rem;
+		border-radius: var(--radius-full);
+		vertical-align: middle;
+	}
+
+	.chip-rust {
+		background: rgba(251, 113, 133, 0.15);
+		color: var(--color-rose);
+		border: 1px solid rgba(251, 113, 133, 0.3);
+	}
+	.chip-c {
+		background: rgba(99, 102, 241, 0.15);
+		color: var(--color-accent-hover);
+		border: 1px solid rgba(99, 102, 241, 0.3);
+	}
+	.chip-hw {
+		background: rgba(251, 191, 36, 0.15);
+		color: var(--color-amber);
+		border: 1px solid rgba(251, 191, 36, 0.3);
+	}
+	.chip-linux {
+		background: rgba(52, 211, 153, 0.15);
+		color: var(--color-emerald);
+		border: 1px solid rgba(52, 211, 153, 0.3);
 	}
 
 	.cta-group {
@@ -77,21 +172,22 @@
 	.btn {
 		display: inline-flex;
 		align-items: center;
-		padding: 0.75rem 1.75rem;
-		border-radius: var(--radius-md);
+		padding: 0.8rem 2rem;
+		border-radius: var(--radius-full);
 		font-weight: 600;
 		font-size: 0.9rem;
 		transition: all var(--transition);
 	}
 
 	.btn-primary {
-		background: var(--color-accent);
+		background: var(--gradient-primary);
 		color: white;
+		box-shadow: 0 0 24px var(--color-accent-glow);
 	}
 
 	.btn-primary:hover {
-		background: var(--color-accent-hover);
-		box-shadow: 0 0 30px var(--color-accent-glow);
+		box-shadow: 0 0 40px var(--color-accent-glow), 0 0 80px rgba(34, 211, 238, 0.1);
+		transform: translateY(-2px);
 	}
 
 	.btn-outline {
@@ -100,19 +196,9 @@
 	}
 
 	.btn-outline:hover {
-		border-color: var(--color-accent);
-		color: var(--color-accent);
-	}
-
-	.hero-glow {
-		position: absolute;
-		width: 600px;
-		height: 600px;
-		background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
-		top: 50%;
-		left: 60%;
-		transform: translate(-50%, -50%);
-		pointer-events: none;
+		border-color: var(--color-cyan);
+		color: var(--color-cyan);
+		box-shadow: 0 0 20px var(--color-cyan-glow);
 	}
 
 	@media (max-width: 640px) {
