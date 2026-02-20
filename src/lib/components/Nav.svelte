@@ -3,10 +3,10 @@
 	import { base } from '$app/paths';
 
 	const links = [
-		{ href: '/', label: 'Home' },
-		{ href: '/about', label: 'About' },
-		{ href: '/projects', label: 'Projects' },
-		{ href: '/contact', label: 'Contact' }
+		{ href: `${base}/`, label: 'Home' },
+		{ href: `${base}/about`, label: 'About' },
+		{ href: `${base}/projects`, label: 'Projects' },
+		{ href: `${base}/contact`, label: 'Contact' }
 	] as const;
 
 	let scrolled = $state(false);
@@ -21,6 +21,7 @@
 <nav class:scrolled>
 	<div class="nav-inner">
 		<a href="{base}/" class="logo">
+
 			<span class="logo-accent">&lt;</span>RZ<span class="logo-accent"> /&gt;</span>
 		</a>
 		<ul>
@@ -28,7 +29,7 @@
 				<li>
 					<a
 						{href}
-						class:active={page.url.pathname === href || page.url.pathname === `${base}${href}`}
+						class:active={page.url.pathname === href}
 					>
 						{label}
 					</a>
