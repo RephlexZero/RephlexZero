@@ -1,42 +1,50 @@
-# sv
+# Jake Stewart
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+**Embedded Systems Engineer | EEE Student**
 
-## Creating a project
+```c
+#include <stdio.h>
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project
-npx sv create my-app
+int main(void) {
+    printf("I build things that live close to the metal.\n");
+    printf("From PCB design and firmware to Linux systems and networking.\n");
+    return 0;
+}
 ```
 
-To recreate this project with the same configuration:
+> **Note:** I'm not a web developer! This repository just hosts my "vibecoded" SvelteKit portfolio. Check out my actual engineering work below.
 
-```sh
-# recreate this project
-npx sv create --template minimal --types ts --no-install .
-```
+### /skills
 
-## Developing
+- **Languages:** `Rust` `C` `C++` `Python`
+- **Hardware:** `KiCad` `PCB Design` `Microcontrollers` `Hall Effect Sensors` `Custom Keyboards`
+- **Systems:** `Linux` `GStreamer` `Docker` `Git`
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### /projects
 
-```sh
-npm run dev
+#### Hardware & Custom Keyboards
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- **[MoonBoard](https://github.com/certainly1182/MoonBoard)** — Co-authored custom keyboard project. I developed the firmware for this high-performance board.
+- **[MoonPad](https://github.com/RephlexZero/MoonPad)** — A custom Hall Effect keypad designed from scratch in KiCad (PCB layout, schematic, and case design) for high-performance gaming input.
+- **[minipad-firmware](https://github.com/RephlexZero/minipad-firmware)** — Hall Effect keypad firmware with rapid trigger support, designed for low-latency input (C++).
+- **[qmk_firmware](https://github.com/RephlexZero/qmk_firmware)** — My fork of QMK containing all my custom keyboard firmware work and contributions.
 
-## Building
+#### Systems & Networking
 
-To create a production version of your app:
+- **[Strata](https://github.com/RephlexZero/strata)** — Open-source bonded cellular video transport. Bonds 2–6 network links into a single resilient live video stream. Built with Rust and GStreamer for ARM64 field hardware.
 
-```sh
-npm run build
-```
+#### Robotics
 
-You can preview the production build with `npm run preview`.
+- **[VIPS Rover](https://github.com/RephlexZero/vips_rover)** — Autonomously navigating rover using the Racelogic VIPS positioning system (Python).
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+### /contact
+
+- **LinkedIn:** [Jake Stewart](https://www.linkedin.com/in/jake-stewart-360444272/)
+- **Email:** jake.reflex@gmail.com
+
+---
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=RephlexZero&show_icons=true&theme=tokyonight&hide_border=true" alt="Jake's GitHub stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RephlexZero&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
+</div>
